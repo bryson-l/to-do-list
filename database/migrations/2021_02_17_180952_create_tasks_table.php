@@ -22,7 +22,6 @@ class CreateTasksTable extends Migration
 
             $table->timestamps();
             // constraints
-            $table->primary('id');
             $table->foreign('task_list_id')->references('id')->on('task_lists');
         });
     }

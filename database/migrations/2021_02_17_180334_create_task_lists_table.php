@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTaskListTable extends Migration
+class CreateTaskListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -21,7 +21,6 @@ class CreateTaskListTable extends Migration
             $table->timestamps();
 
             // constraints
-            $table->primary('id');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

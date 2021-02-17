@@ -21,7 +21,6 @@ class CreateTaskPrioritiesTable extends Migration
 
             $table->timestamps();
             // constraints
-            $table->primary('id');
             $table->foreign('task_id')->references('id')->on('tasks');
         });
     }
