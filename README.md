@@ -1,12 +1,13 @@
-Time Spent:
-Setup of Laravel (including XAMPP, composer) initial commit - 2 hours
+Time Spent:<br/>
+Setup of Laravel (including XAMPP, composer) initial commit - 2 hours<br/>
+Database structure - 45 min
 
-To run the project:
-use command `php artisan serve` in the root of the repo
+To run the project:<br/>
+use command `php artisan serve` in the root of the repo<br/>
 open `http://127.0.0.1:8000/` in web browser
 
-Database Structure:
-![alt text](dbDiagram.png)
+### Database Structure:<br/>
+![dbDiagram](https://user-images.githubusercontent.com/35579966/108248438-d8cb6580-7121-11eb-93b3-74787a561188.PNG)<br/>
 
 This is the database structure that I will use for this To-Do List. The tool I used (dbdiagram.io) does not allow for
 crow's foot notation so I will explain how each table relates to the others here. Each user will have an id that will
