@@ -7,6 +7,7 @@ figuring out why migrations would return error 'unrecognized database' - 2 hrs<b
 figuring out why migrations only partially worked - 1.5 hrs<br/>
 writing models - 30 min<br/>
 writing seeders - 1 hr, this took longer than I would've expeected because the migration function timestamps() creates a `created_at` and `updated_at` column and I kept trying to reference `created_date` and `updated_date` when writing the seeders<br/>
+attempting to rewrite migrations to have a nullable foreign key - 1 hr<br/>
 restructure of database - 1 hr, I decided to get rid of the `deleted_by` columns. While these columns could prove to be useful, in the interest of time, I've decided to skip them since I have been unable to figure out how to create a nullable foreign key with laravel migrations. I was able to do this manually in phpMyAdmin, but I couldn't find a solution that used the migration files, so anyone that would run this project would have to manually set these `deleted_by` columns to nullable. To save myself, and whoever reviews this repo, some time I have decided to forego these columns since the features it enables are not requested in the assignment document.
 
 
