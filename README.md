@@ -1,7 +1,11 @@
 Time Spent:<br/>
-Setup of Laravel (including XAMPP, composer) initial commit - 2 hours<br/>
+Setup of Laravel (including XAMPP, composer) initial commit - 2 hrs<br/>
 Database structure - 45 min<br/>
 writing database migrations - 30 min<br/>
+figuring out why Apache wouldn't run - 2hrs<br/>
+figuring out why migrations would return error 'unrecognized database' - 2 hrs<br/>
+figuring out why migrations only partially worked - 1.5 hrs<br/>
+writing models - 30 min<br/>
 
 To run the project:<br/>
 use command `php artisan serve` in the root of the repo<br/>
