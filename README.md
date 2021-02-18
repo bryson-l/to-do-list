@@ -22,4 +22,4 @@ lists to have as many items as needed and is a one-to-many relationship. The `ta
 with a `tasks` row and will designate the priorities of the `tasks`. This is a many-to-many relationship as the 
 specification for this assignment says that each task can have multiple priorities. These will, for the most-part, be 
 static values as specified in the assignment, but can be changed at a later time. Lastly, the `task_status` will be 
-associated with a task, similar to the `task_priorties` table, and will designate the priority for the associated `task`.
+associated with a task, similar to the `task_priorties` table, and will designate the status for the associated `task`.
