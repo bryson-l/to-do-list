@@ -1,0 +1,112 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Tasks;
+use Illuminate\Database\Seeder;
+use DB;
+use DateTime;
+
+class TasksTableSeeder extends Seeder {
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run() {
+
+        DB::table('tasks')->delete();
+
+        $now = new DateTime();
+
+        Tasks::create([ 
+            'task_list_id' => 1,
+            'description' => 'finish these seeders',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+
+        Tasks::create([ 
+            'task_list_id' => 1,
+            'description' => 'figure out middle layer (getting data from database to frontend)',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+
+        Tasks::create([ 
+            'task_list_id' => 1,
+            'description' => 'blast out the front-end rq',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+        
+        Tasks::create([ 
+            'task_list_id' => 1,
+            'description' => 'learn authorization',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+
+        Tasks::create([ 
+            'task_list_id' => 2,
+            'description' => 'john should do this first',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+        
+        Tasks::create([ 
+            'task_list_id' => 2,
+            'description' => 'john should do this second',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+        
+        Tasks::create([ 
+            'task_list_id' => 2,
+            'description' => 'john should do this third',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+        
+        Tasks::create([ 
+            'task_list_id' => 3,
+            'description' => 'sam should do this first',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+        
+        Tasks::create([ 
+            'task_list_id' => 3,
+            'description' => 'sam should do this second',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+        
+        Tasks::create([ 
+            'task_list_id' => 3,
+            'description' => 'sam should do this third',
+            'created_at' => $now,
+            'updated_at' => NULL,
+            'deleted' => False,
+            'deleted_date' => NULL,
+        ]);
+    }
+}
