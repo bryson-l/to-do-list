@@ -16,7 +16,7 @@ use command `php artisan serve` in the root of the repo<br/>
 open `http://127.0.0.1:8000/` in web browser
 
 ### Database Structure:<br/>
-![dbDiagram](https://user-images.githubusercontent.com/35579966/108271783-5782cb80-713f-11eb-8040-42cc87894afc.PNG)<br/>
+![dbDiagram](https://user-images.githubusercontent.com/35579966/108418094-c410cf80-71fe-11eb-9ee2-eedd9c0cea2f.PNG)<br/>
 I will be using `<this notation>` to designate tables. When later referenced, they will correspond to a row in that table.<br/>
 This is the database structure that I will use for this To-Do List. The tool I used (dbdiagram.io) does not allow for
 crow's foot notation so I will explain how each table relates to the others here. Each `users` will have an id that will
