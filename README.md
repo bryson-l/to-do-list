@@ -6,6 +6,7 @@ figuring out why Apache wouldn't run - 2hrs<br/>
 figuring out why migrations would return error 'unrecognized database' - 2 hrs<br/>
 figuring out why migrations only partially worked - 1.5 hrs<br/>
 writing models - 30 min<br/>
+writing seeders - 1 hr, this took longer than I would've expeected because the migration function timestamps() creates a `created_at` and `updated_at` column and I kept trying to reference `created_date` and `updated_date` when writing the seeders
 
 To run the project:<br/>
 use command `php artisan serve` in the root of the repo<br/>
