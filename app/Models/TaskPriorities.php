@@ -24,7 +24,7 @@ class TaskPriorities extends Model
      */
     protected $fillable = [
         'task_id',
-        'description',
+        'priority_code',
     ];
 
     /**

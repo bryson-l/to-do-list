@@ -16,10 +16,11 @@ class CreateTaskStatusTable extends Migration
         Schema::create('task_status', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('task_id');
             $table->boolean('complete');
 
             $table->nullableTimestamps();
+            // constraints
+            $table->foreign('task_id')->references('id')->on('tasks');
         });
     }
 

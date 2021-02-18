@@ -28,7 +28,6 @@ class TaskLists extends Model
         'updated_date',
         'deleted',
         'deleted_date',
-        'deleted_by'
     ];
 
     /**

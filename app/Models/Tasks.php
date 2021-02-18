@@ -24,12 +24,12 @@ class Tasks extends Model
      */
     protected $fillable = [
         'task_list_id',
+        'status_id',
         'description',
         'created_date',
         'updated_date',
         'deleted',
         'deleted_date',
-        'deleted_by'
     ];
 
     /**

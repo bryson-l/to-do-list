@@ -24,12 +24,11 @@ class PriorityCodes extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id',
-        'created_date',
-        'updated_date',
+        'description',
+        'created_at',
+        'updated_at',
         'deleted',
-        'deleted_date',
-        'deleted_by'
+        'deleted_date'
     ];
 
     /**
@@ -47,7 +46,8 @@ class PriorityCodes extends Model
      * @var array
      */
     protected $casts = [
-        'created_date' => 'datetime',
-        'updated_date' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_date' => 'datetime'
     ];
 }

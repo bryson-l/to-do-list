@@ -17,7 +17,7 @@ class CreateTasksTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('task_list_id');
-            $table->unsignedBigInteger('status');
+            $table->unsignedBigInteger('status_id');
             $table->string('description');
             $table->boolean('deleted');
             $table->softDeletes($column = 'deleted_date', $precision = 0);

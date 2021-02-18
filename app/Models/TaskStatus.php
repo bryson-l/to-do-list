@@ -24,8 +24,9 @@ class TaskStatus extends Model
      */
     protected $fillable = [
         'task_id',
-        'description',
-        'created_date'
+        'complete',
+        'created_at',
+        'updated_at'
     ];
 
     /**
@@ -43,6 +44,7 @@ class TaskStatus extends Model
      * @var array
      */
     protected $casts = [
-        'created_date' => 'datetime'
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime'
     ];
 }

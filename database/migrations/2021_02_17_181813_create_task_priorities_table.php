@@ -18,6 +18,8 @@ class CreateTaskPrioritiesTable extends Migration
 
             $table->unsignedBigInteger('task_id');
             $table->unsignedBigInteger('priority_code');
+            $table->boolean('deleted');
+            $table->softDeletes($column = 'deleted_date', $precision = 0);
 
             $table->nullableTimestamps();
              // constraints
