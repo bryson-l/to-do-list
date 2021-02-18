@@ -17,11 +17,15 @@ class CreateTaskListsTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('user_id');
+            $table->boolean('deleted');
+            $table->softDeletes($column = 'deleted_date', $precision = 0);
+            $table->unsignedBigInteger('deleted_by');
 
             $table->timestamps();
 
             // constraints
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('deleted_by')->references('id')->on('users');
         });
     }
 
