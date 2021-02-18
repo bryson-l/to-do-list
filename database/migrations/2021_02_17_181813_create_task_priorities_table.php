@@ -17,11 +17,12 @@ class CreateTaskPrioritiesTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('task_id');
-            $table->string('description');
+            $table->unsignedBigInteger('priority_code');
 
-            $table->timestamps();
-            // constraints
-            $table->foreign('task_id')->references('id')->on('tasks');
+            $table->nullableTimestamps();
+             // constraints
+             $table->foreign('task_id')->references('id')->on('tasks');
+             $table->foreign('priority_code')->references('id')->on('priority_codes');
         });
     }
 

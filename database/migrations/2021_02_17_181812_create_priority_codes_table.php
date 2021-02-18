@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersTable extends Migration
+class CreatePriorityCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('priority_codes', function (Blueprint $table) {
             $table->id();
 
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('username');
-            $table->string('password');
-            $table->boolean('admin');
+            $table->string('description');
+            $table->boolean('deleted');
+            $table->softDeletes($column = 'deleted_date', $precision = 0);
 
             $table->nullableTimestamps();
-            // constraints
         });
     }
 
@@ -34,6 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('priority_codes');
     }
 }

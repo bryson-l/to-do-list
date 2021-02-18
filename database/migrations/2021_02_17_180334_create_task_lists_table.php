@@ -20,7 +20,7 @@ class CreateTaskListsTable extends Migration
             $table->boolean('deleted');
             $table->softDeletes($column = 'deleted_date', $precision = 0);
 
-            $table->timestamps();
+            $table->nullableTimestamps();
 
             // constraints
             $table->foreign('user_id')->references('id')->on('users');

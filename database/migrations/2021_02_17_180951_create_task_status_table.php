@@ -17,9 +17,9 @@ class CreateTaskStatusTable extends Migration
             $table->id();
 
             $table->unsignedBigInteger('task_id');
-            $table->string('description');
+            $table->boolean('complete');
 
-            $table->timestamps();
+            $table->nullableTimestamps();
         });
     }
 
