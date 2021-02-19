@@ -25,7 +25,7 @@ class CreateTasksTable extends Migration
             $table->nullableTimestamps();
             // constraints
             $table->foreign('task_list_id')->references('id')->on('task_lists');
-            $table->foreign('status')->references('id')->on('task_status');
+            $table->foreign('status_id')->references('id')->on('task_status');
         });
     }
 
