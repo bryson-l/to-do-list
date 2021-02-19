@@ -15,7 +15,7 @@ class PriorityCodesTableSeeder extends Seeder {
      */
     public function run() {
 
-        DB::table('task_lists')->delete();
+        DB::table('priority_codes')->delete();
 
         $now = new DateTime();
 

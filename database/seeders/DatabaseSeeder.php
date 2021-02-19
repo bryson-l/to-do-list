@@ -15,11 +15,11 @@ class DatabaseSeeder extends Seeder {
     public function run()
     {
         Model::unguard();
-        $this->call([UserTableSeeder::class, 
-                    TaskListsTableSeeder::class, 
-                    TaskStatusTableSeeder::class, 
-                    TasksTableSeeder::class, 
+        $this->call([UserTableSeeder::class,
                     PriorityCodesTableSeeder::class, 
+                    TaskStatusTableSeeder::class, 
+                    TaskListsTableSeeder::class, 
+                    TasksTableSeeder::class, 
                     TaskPrioritiesTableSeeder::class]);
     }
 }

@@ -22,7 +22,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 1,
             'priority_code' => 1,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -30,7 +30,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 2,
             'priority_code' => 2,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -38,7 +38,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 3,
             'priority_code' => 2,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -46,7 +46,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 4,
             'priority_code' => 1,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -54,7 +54,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 5,
             'priority_code' => 1,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -62,7 +62,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 6,
             'priority_code' => 2,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -70,7 +70,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 7,
             'priority_code' => 4,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -78,7 +78,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 8,
             'priority_code' => 1,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -86,7 +86,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 9,
             'priority_code' => 2,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
@@ -94,7 +94,7 @@ class TaskPrioritiesTableSeeder extends Seeder {
         TaskPriorities::create([
             'task_id' => 10,
             'priority_code' => 4,
-            'created_date' => $now,
+            'created_at' => $now,
             'deleted' => False,
             'deleted_date' => NULL
         ]);
