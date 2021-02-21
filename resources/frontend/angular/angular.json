@@ -5,11 +5,7 @@
   "projects": {
     "angular": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -24,13 +20,33 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/favicon.ico", 
+              "src/assets", 
+              "src/assets/img.jpg"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-flot/jquery.flot.js",
+              "node_modules/jquery-flot/jquery.flot.pie.js",
+              "node_modules/jquery-flot/jquery.flot.time.js",
+              "node_modules/jquery-flot/jquery.flot.stack.js",
+              "node_modules/jquery-flot/jquery.flot.resize.js",
+              "node_modules/jquery-flot/jquery.flot.canvas.js",
+              "node_modules/jquery-flot/jquery.flot.categories.js",
+              "node_modules/jquery-flot/jquery.flot.crosshair.js",
+              "node_modules/jquery-flot/jquery.flot.errorbars.js",
+              "node_modules/jquery-flot/jquery.flot.symbol.js",
+              "node_modules/jquery-flot/jquery.flot.navigate.js",
+              "node_modules/jquery-flot/jquery.flot.fillbetween.js",
+              "node_modules/jquery-flot/jquery.flot.selection.js",
+              "node_modules/jquery-flot/jquery.flot.image.js",
+              "node_modules/jquery-flot/jquery.flot.threshold.js",
+              "src/assets/jquery.flot.spline.js"
+            ]
           },
           "configurations": {
             "production": {
