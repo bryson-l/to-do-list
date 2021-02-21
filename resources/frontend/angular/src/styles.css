@@ -23,7 +23,7 @@ body { margin: 0px}
 }
 .nav-sm .container.body .right_col {
   padding: 10px 20px;
-  margin-left: 70px;
+  margin-left: 0;
   z-index: 2;
 }
 .nav-sm .navbar.nav_title {
@@ -207,7 +207,7 @@ body .container.body .right_col {
 }
 .nav-md .container.body .right_col {
   padding: 10px 20px 0;
-  margin-left: 230px;
+  margin-left: 0;
 }
 .nav_title {
   width: 230px;
