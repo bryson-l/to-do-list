@@ -11,7 +11,7 @@ import * as $ from "jquery";
 export class TopNavBarComponent {
   // TypeScript public modifier
   constructor() {}
-  @Input() public isUserLoggedIn: boolean = false;
+  @Input() public isUserLoggedIn: any;
 
   onClick(event: MouseEvent) {
     let profile = $("#profile")
