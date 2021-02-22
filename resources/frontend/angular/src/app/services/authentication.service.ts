@@ -7,7 +7,7 @@ import { map } from 'rxjs/operators';
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<any>;
     public currentUser: Observable<any>;
-    apiUrl: string = 'localhost:8000/api/users';
+    apiUrl: string = 'http://localhost:8000/api';
 
     constructor(private http: HttpClient) {
         this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
@@ -19,7 +19,7 @@ export class AuthenticationService {
     }
 
     login(username: string | null, password:string | null) {
-        return this.http.post<any>(`${this.apiUrl}/auth/login`, { username, password })
+        return this.http.post<any>(`${this.apiUrl}/login`, { username, password })
             .pipe(map(user => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 localStorage.setItem('currentUser', JSON.stringify(user));

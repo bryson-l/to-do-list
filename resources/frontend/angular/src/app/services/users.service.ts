@@ -5,7 +5,8 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class UsersService {
     constructor(private http: HttpClient) { }
+    apiUrl: string = 'http://localhost:8000/api';
     getUsers() {
-        return this.http.get(window.URL + '/api/users')
+        return this.http.get(this.apiUrl + '/users')
     }
 }
