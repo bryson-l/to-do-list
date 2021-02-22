@@ -29,8 +29,8 @@ class Users extends Authenticatable
         'username',
         'password',
         'admin',
-        'created_date',
-        'updated_date'
+        'created_at',
+        'updated_at'
     ];
 
     /**
