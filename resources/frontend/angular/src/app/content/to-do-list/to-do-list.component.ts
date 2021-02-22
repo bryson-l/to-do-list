@@ -1,8 +1,10 @@
 import { Component, HostListener } from '@angular/core';
+import { AuthGuard } from 'src/app/auth/auth-guard.component';
 
 @Component({
   selector: 'to-do-list',
-  templateUrl: './to-do-list.component.html'
+  templateUrl: './to-do-list.component.html',
+  providers: [ AuthGuard ]
 })
 export class ToDoListComponent {
     screenHeight: number = 0;

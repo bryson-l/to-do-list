@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import * as $ from "jquery";
 
 @Component({
@@ -11,30 +11,19 @@ import * as $ from "jquery";
 export class TopNavBarComponent {
   // TypeScript public modifier
   constructor() {}
+  @Input() public isUserLoggedIn: boolean = false;
 
-  toggleClicked(event: MouseEvent) {
-    var body = $("body");
-    var menu = $("#sidebar-menu");
+  onClick(event: MouseEvent) {
+    let profile = $("#profile")
+    profile.css("display", "block")
+  }
 
-    // toggle small or large menu
-    if (body.hasClass("nav-md")) {
-      menu.find("li.active ul").hide();
-      menu
-        .find("li.active")
-        .addClass("active-sm")
-        .removeClass("active");
-    } else {
-      menu.find("li.active-sm ul").show();
-      menu
-        .find("li.active-sm")
-        .addClass("active")
-        .removeClass("active-sm");
-    }
-    body.toggleClass("nav-md nav-sm");
+  onBlur(event: FocusEvent) {
+    let profile = $("#profile")
+    profile.css("display", "none")
   }
 
   ngOnInit() {
-    console.log("hello `topnavbar` component");
   }
 
   ngAfterViewInit() {}
