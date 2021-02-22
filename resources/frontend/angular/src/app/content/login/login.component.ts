@@ -6,7 +6,6 @@ import { Component, HostListener } from '@angular/core';
 })
 export class LoginComponent {
     screenHeight: number = 0;
-    screenWidth: number = 0;
   
     constructor() {
         this.getScreenSize();
