@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+    // log in
+    public function login(array $data) {
+
+    }
+
     // register
     protected function create(array $data) {
         return User::create([
