@@ -11,7 +11,8 @@ import * as $ from "jquery";
 export class TopNavBarComponent {
   // TypeScript public modifier
   constructor() {}
-  @Input() public isUserLoggedIn: any;
+  @Input() public currentUser: any;
+  isUserLoggedIn: boolean = false
 
   onClick(event: MouseEvent) {
     let profile = $("#profile")
@@ -24,6 +25,9 @@ export class TopNavBarComponent {
   }
 
   ngOnInit() {
+    if (Object.keys(this.currentUser).length > 0) {
+      this.isUserLoggedIn = true;
+    }
   }
 
   ngAfterViewInit() {}
