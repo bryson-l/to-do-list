@@ -51,9 +51,5 @@ Route::middleware('auth:api')->get('priority_codes/{id}', 'PriorityCodeControlle
 Route::middleware('auth:api')->post('priority_codes', 'PriorityCodeController@store');
 Route::middleware('auth:api')->put('priority_codes/{id}', 'PriorityCodeController@update');
 // AUTHORIZATION
-// Authentication routes...
-Route::post('auth/login', 'AuthController@postLogin');
-Route::middleware('auth:api')->get('auth/logout', 'AuthController@postLogout');
-
-// Registration routes...
-Route::post('auth/register', 'AuthController@create');
+Route::post('register', 'Auth\RegisterController@register');
+Route::post('login', 'Auth\LoginController@login');

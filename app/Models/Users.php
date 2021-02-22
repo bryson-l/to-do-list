@@ -52,4 +52,11 @@ class Users extends Authenticatable
         'created_date' => 'datetime',
         'updated_date' => 'datetime'
     ];
+    public function generateToken()
+    {
+        $this->api_token = str_random(60);
+        $this->save();
+
+        return $this->api_token;
+    }
 }
