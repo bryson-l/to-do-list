@@ -242,6 +242,9 @@ body .container.body .right_col {
     height: inherit;
   }
 }
+h2 {
+  font-size: 1.5rem !important;
+}
 @media (max-width: 1270px) and (min-width: 192px) {
   .x_title h2 small {
     display: none
