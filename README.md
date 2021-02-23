@@ -21,11 +21,11 @@ To run the project:<br/>
 will need a recent install of node.js<br/>
 IN ROOT:<br/>
 run `composer dump-autoload`<br/> 
-followed by `composer install`
+followed by `composer install`<br/>
 use command `php artisan serve`<br/>
 TO RUN ANGULAR:<br/>
 in PowerShell (or Mac equivalent) `ls` to `resources/frontend/angular`<br/>
-run `npm install`
+run `npm install`<br/>
 use the command `npm start` - this will open a browser tab to the Angular frontend
 
 ### Database Structure:<br/>
