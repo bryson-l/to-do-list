@@ -9,6 +9,7 @@ import { AuthGuard } from 'src/app/auth/auth-guard.component';
 export class ToDoListComponent {
     screenHeight: number = 0;
     screenWidth: number = 0;
+    currentList: {} = {};
   
     constructor() {
         this.getScreenSize();
@@ -17,5 +18,6 @@ export class ToDoListComponent {
     @HostListener('window:resize', ['$event'])
     getScreenSize(event?: any) {
         this.screenHeight = window.innerHeight;
+        this.screenWidth = window.innerWidth;
     }  
 }

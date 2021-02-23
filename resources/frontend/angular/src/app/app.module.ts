@@ -17,7 +17,7 @@ import { ErrorInterceptor } from './auth/error.interceptor';
 
 export const AppRoutes2: Routes = [
   { path: 'login', component: LoginComponent},
-  { path:'', component: ToDoListComponent, canActivate: [AuthGuard]},
+  { path:'', component: ToDoListComponent}, // , canActivate: [AuthGuard] <- needed for auth
   { path: '**', component: NoContentComponent}
 ];
 
