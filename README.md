@@ -18,8 +18,14 @@ implement authorization - ongoing - this is something I don't have much experien
 
 
 To run the project:<br/>
-use command `php artisan serve` in the root of the repo<br/>
-in PowerShell (or Mac equivalent) ls to `resources/frontend/angular`<br/>
+will need a recent install of node.js
+IN ROOT:<br/>
+run `composer dump-autoload`<br/> 
+followed by `composer install`
+use command `php artisan serve`<br/>
+TO RUN ANGULAR:<br/>
+in PowerShell (or Mac equivalent) `ls` to `resources/frontend/angular`<br/>
+run `npm install`
 use the command `npm start` - this will open a browser tab to the Angular frontend
 
 ### Database Structure:<br/>
