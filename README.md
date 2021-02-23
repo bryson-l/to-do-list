@@ -18,7 +18,7 @@ implement authorization - ongoing - this is something I don't have much experien
 
 
 To run the project:<br/>
-will need a recent install of node.js
+will need a recent install of node.js<br/>
 IN ROOT:<br/>
 run `composer dump-autoload`<br/> 
 followed by `composer install`
