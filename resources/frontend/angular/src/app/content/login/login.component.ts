@@ -9,7 +9,7 @@ import { first } from 'rxjs/operators';
 })
 export class LoginComponent {
     screenHeight: number = 0;
-    credentials: {username: string | null, password: string | null} = {username: null, password: null}
+    credentials: {username: string | null, password: string | null} = {username: '', password: ''}
     error: string = '';
   
     constructor(

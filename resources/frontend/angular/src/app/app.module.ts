@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -32,7 +33,8 @@ export const AppRoutes2: Routes = [
   ],
   imports: [BrowserModule, 
             RouterModule.forRoot(AppRoutes2, { useHash: true }), 
-            HttpClientModule, 
+            HttpClientModule,
+            FormsModule 
           ],
   providers: [ AuthGuard, 
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, 

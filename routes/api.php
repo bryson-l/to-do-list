@@ -18,7 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 // USERS
-Route::middleware('auth:api')->get('users', 'UserController@index');
+Route::get('users', 'UserController@index');
 Route::middleware('auth:api')->get('users/{id}', 'UserController@show');
 Route::middleware('auth:api')->post('users', 'UserController@store');
 Route::middleware('auth:api')->put('users/{id}', 'UserController@update');
@@ -51,5 +51,4 @@ Route::middleware('auth:api')->get('priority_codes/{id}', 'PriorityCodeControlle
 Route::middleware('auth:api')->post('priority_codes', 'PriorityCodeController@store');
 Route::middleware('auth:api')->put('priority_codes/{id}', 'PriorityCodeController@update');
 // AUTHORIZATION
-Route::post('register', 'Auth\RegisterController@register');
-Route::post('login', 'Auth\LoginController@login');
+Route::post('login', 'LoginController@login');
