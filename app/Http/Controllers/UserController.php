@@ -70,6 +70,20 @@ class UserController extends Controller
         $user->delete();
         return response()->json('deleted record');
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showByToken($token)
+    {
+        $user = Users::where('api_token', $token)->first();
+        return response()->json($user);
+    }
+
+
     public function generateToken() {
         $this->api_token = str_random(60);
         $this->save();

@@ -616,6 +616,7 @@ a:hover, a:focus {
 }
 .nav.navbar-nav>li>a {
   color: #515356 !important;
+  float: right;
 }
 .nav.top_menu>li>a {
   position: relative;
@@ -1381,7 +1382,7 @@ ul.msg_list li a .message {
   left: 0;
   list-style: none outside none;
   padding: 0;
-  position: absolute;
+  position: absolute !important;
   text-shadow: none;
   top: 100%;
   z-index: 9998;
@@ -1718,7 +1719,7 @@ h4.graph_title {
   text-align: right;
   margin-right: 10px;
 }
-.main_menu .fa {
+.fa {
   width: 26px;
   opacity: .99;
   display: inline-block;

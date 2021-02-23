@@ -9,4 +9,7 @@ export class UsersService {
     getUsers() {
         return this.http.get(this.apiUrl + '/users')
     }
+    getUserByToken(token: string) {
+        return this.http.get(this.apiUrl + '/users/' + token)
+    }
 }

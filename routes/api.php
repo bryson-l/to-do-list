@@ -23,6 +23,7 @@ Route::middleware('auth:api')->get('users/{id}', 'UserController@show');
 Route::middleware('auth:api')->post('users', 'UserController@store');
 Route::middleware('auth:api')->put('users/{id}', 'UserController@update');
 Route::middleware('auth:api')->delete('users/{id}', 'UserController@delete');
+Route::middleware('auth:api')->get('users/{token}', 'UserController@showByToken');
 // TASK LISTS
 Route::middleware('auth:api')->get('task_lists', 'TaskListController@index');
 Route::middleware('auth:api')->get('task_lists/{id}', 'TaskListController@show');
