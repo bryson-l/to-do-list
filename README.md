@@ -20,6 +20,8 @@ implement authorization - ongoing - this is something I don't have much experien
 To run the project:<br/>
 will need a recent install of node.js<br/>
 IN ROOT:<br/>
+create the database with `php artisan migrate`<br/>
+seed the database with `php artisan db:seed`<br/>
 run `composer dump-autoload`<br/> 
 followed by `composer install`<br/>
 use command `php artisan serve`<br/>
