@@ -14,12 +14,15 @@ Need to rewrite the migrations and seeders to reflect these changes<br/>
 rewrite of migrations and seeders - 5 hours(?) - hard to say exactly how long I was stuck on this part. I rewrote the migrations and kept running into various small bugs. It was a huge relief when I ran `php artisan migrate` and it finished without errors, this was by far the hardest part I've encountered so far.<br/>
 make the API - 3 hours - Once I got the first controller working the rest was really straightforward, just took a while to get that first one working the way I wanted it to. A further breakdown of this looks like 2.5 hrs debugging, .5 hrs writing rest of controllers.<br/>
 add angular to the project - ~30 min - I found a tutorial on how to use Angular with laravel and followed that guide. Angular is something I feel extremely comfortable with so I don't anticipate putting it all together to make it functional taking very long.<br/>
-implement authorization - ongoing - this is something I don't have much experience with. I know the basic principles of issuing a user a temporary token that can be refreshed, but I don't have experience implementing this. I'm confident that I can get this portion done, and it may even be easier than I expect. There are many, many tutorials on how to implement this, so I will follow one and wrap up this project by creating the UI in Angular.
+implement authorization - ongoing - this is something I don't have much experience with. I know the basic principles of issuing a user a temporary token that can be refreshed, but I don't have experience implementing this. I'm confident that I can get this portion done, and it may even be easier than I expect. There are many, many tutorials on how to implement this, so I will follow one and wrap up this project by creating the UI in Angular.<br/>
+I decided to put auth on the back burner and work on making the front end usable. Rather than trying to re-learn Angular routing because it was recently updated, I will showcase what Angular could potentially do even in a Laravel stack. It's been probably ~8-10 hours, if I had to give a guess, since the last time spent update. To clarify, I have auth working in the database and I have all the functions needed in the 'API', I  just couldn't get the routing to work for the life of me. What would happen is you would provide credentials and the page would 'refresh' back to the same place you were before you entered the credentials. Something with the lifecycle functions must've been changed, but each time I would click 'Login' the auth-guard would hit multiple times which would cause the generated token to get deleted which would, in turn, cause the login screen to show back up because the user didn't have a token. Frustrating stuff. I've spent the past ~3-4 hours on making the front end stuff and have a decent chunk of it done so far. I plan to wrap up this demo by allowing users to create/update/'delete' tasks inside of the grid.
 
 
 To run the project:<br/>
 will need a recent install of node.js<br/>
 IN ROOT:<br/>
+create the database with `php artisan migrate`<br/>
+seed the database with `php artisan db:seed`<br/>
 run `composer dump-autoload`<br/> 
 followed by `composer install`<br/>
 use command `php artisan serve`<br/>
