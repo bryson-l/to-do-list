@@ -59,7 +59,16 @@ export class ToDoListComponent implements OnInit {
     }
 
     onSaveClick() {
-        
+        this.taskService.saveTasks(this.tasks)
+                        .subscribe(data => {
+                            if (this.selectedTaskList) {
+                                this.taskService.getListById(this.selectedTaskList.id)
+                                                .subscribe(data => {
+                                                    this.tasks = data
+                                                })
+                            }
+                            console.log(data)
+                        })
     }
   
     @HostListener('window:resize', ['$event'])

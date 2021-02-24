@@ -20,7 +20,7 @@ class TaskController extends Controller
     }
 
     public function getTasksByTaskListId($taskListId) {
-        $sql = "SELECT t.id, ts.complete, pc.description as priority, t.description, t.created_at, t.updated_at FROM tasks t, task_status ts, task_priorities tp, priority_codes pc, task_lists tl\n"
+        $sql = "SELECT t.id, t.task_list_id, ts.complete, pc.description as priority, t.description, t.created_at, t.updated_at FROM tasks t, task_status ts, task_priorities tp, priority_codes pc, task_lists tl\n"
 
     . "WHERE tl.id = t.task_list_id and t.status_id = ts.id and t.id = tp.task_id and tp.priority_code = pc.id and t.deleted = 0 and tl.id = " . $taskListId;
         return response()->json(DB::select(DB::raw($sql)));
@@ -54,27 +54,45 @@ class TaskController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storage or create new record.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  array $tasks
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $tasks)
+    public function attemptToEditCreate(Request $request) {
+        // $tasks = Tasks::where('task_list_id', $request->all()[0][0]->task_list_id);
+        // foreach ($tasks as $task) {
+        //     if ($task) {
+        //             $tasks->update([
+        //                 'status_id' => $task->status_id,
+        //                 'description' => $task->description,
+        //             ]);
+        //         }
+        //     else {
+        //         Tasks::create([
+        //             'task_list_id' => $task->task_list_id,
+        //             'status_id' => $task->status_id,
+        //             'description' => $task->description
+        //         ]);
+        //     };
+        // };
+        // return response()->json('task list updated');
+        // $tasks = Tasks::where('task_list_id', )
+    }
+
+    public function update(Request $request)
     {
+        $tasks = array();
+        foreach ($request as $task) {
+            $task = Tasks::firstOrCreate(
+                ['id', $task->id],
+                ['task_list_id' => $task->task_list_id, 'description' => $task->description]
+            );
+        };
         foreach ($tasks as $task) {
-            if (Task::hydrate($task)->first()) {
-                $converted = Task::hydrate($task)->first();
-                $converted::save();
-            }
-            else {
-                $taskModel = new Task;
-                $taskModel->task_list_id = $task->task_list_id;
-                $taskModel->status_id = $task->status_id;
-                $taskModel->description = $task->description;
-                $taskModel::save();
-            };
-        }
+            $task->save();
+        };
         return response()->json();
     }
 

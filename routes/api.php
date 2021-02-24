@@ -34,7 +34,7 @@ Route::delete('task_lists/{id}', 'TaskListController@delete');
 Route::get('tasks', 'TaskController@index');
 Route::get('tasks/{taskListId}', 'TaskController@getTasksByTaskListId');
 Route::post('tasks', 'TaskController@store');
-Route::put('tasks/{id}', 'TaskController@update');
+Route::put('tasks', 'TaskController@update');
 Route::delete('tasks/{id}', 'TaskController@delete');
 // TASK STATUS
 Route::get('task_status', 'TaskStatusController@index');

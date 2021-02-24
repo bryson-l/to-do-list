@@ -23,6 +23,7 @@ class Tasks extends Model
      * @var array
      */
     protected $fillable = [
+        'id',
         'task_list_id',
         'status_id',
         'description',
