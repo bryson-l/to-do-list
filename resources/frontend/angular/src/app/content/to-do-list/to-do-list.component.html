@@ -9,7 +9,7 @@
         </div>
         <div class="col-lg-4">
             <widget title="Choose List">
-                <select [(ngModel)]="selectedTaskList" class="form-control">
+                <select [(ngModel)]="selectedTaskList" class="form-control" (change)="getSelectedListTasks($event)">
                     <option *ngFor="let list of taskLists" [ngValue]="list">{{ list.id }}</option>
                 </select>
             </widget>
@@ -21,8 +21,16 @@
                 <dx-data-grid id="gridContainer"
                     [remoteOperations]="false"
                     [allowColumnReordering]="true"
+                    [allowColumnResizing]="true"
                     [rowAlternationEnabled]="true"
-                    [showBorders]="true">
+                    [showBorders]="true"
+                    [dataSource]= "tasks"
+                    >
+
+                    <dxo-editing mode="row" 
+                    [allowUpdating]="true" 
+                    [allowDeleting]="true" 
+                    [allowAdding]="true"></dxo-editing>
 
                     <dxo-paging [pageSize]="10"></dxo-paging>
                     <dxo-pager
@@ -39,37 +47,12 @@
                     <dxo-grouping
                         [autoExpandAll]="false"
                     ></dxo-grouping>
-
-                    <dxi-column dataField="Product" [groupIndex]="0"></dxi-column>
-                    <dxi-column dataField="Amount" caption="Sale Amount" dataType="number" format="currency" alignment="right"></dxi-column>
-                    <dxi-column dataField="SaleDate" dataType="date"></dxi-column>
-                    <dxi-column dataField="Region" dataType="string"></dxi-column>
-                    <dxi-column dataField="Sector" dataType="string"></dxi-column>
-                    <dxi-column dataField="Channel" dataType="string"></dxi-column>
-                    <dxi-column dataField="Customer" dataType="string" [width]="150"></dxi-column>
-
-                    <div *dxTemplate="let d of 'discountCellTemplate'">
-                        <div class="chart-cell">
-                            <dx-bullet
-                                [showTarget]="false"
-                                [showZeroLevel]="true"
-                                [startScaleValue]="0"
-                                [endScaleValue]="100"
-                                [value]="d.value * 100">
-                                <dxo-size [width]="150" [height]="35"></dxo-size>
-                                <dxo-tooltip
-                                    [enabled]="true"
-                                    [paddingTopBottom]="2">
-                                    <dxo-font [size]="18"></dxo-font>
-                                </dxo-tooltip>
-                                <dxo-margin
-                                    [top]="5"
-                                    [bottom]="0"
-                                    [left]="5"
-                                ></dxo-margin>
-                            </dx-bullet>
-                        </div>
-                    </div>
+                    <dxi-column dataField="id" caption="ID" dataType="string" [width]="35"></dxi-column>
+                    <dxi-column dataField="priority" caption="Priority" dataType="string" [width]="90"></dxi-column>
+                    <dxi-column dataField="description" caption="Description" dataType="string" [width]="450"></dxi-column>
+                    <dxi-column dataField="created_at" caption="Created" dataType="string" [width]="150"></dxi-column>
+                    <dxi-column dataField="updated_at" caption="Updated" dataType="string" [width]="70"></dxi-column>
+                    <dxi-column dataField="complete" caption="Complete" dataType="boolean" [width]="90"></dxi-column>
                 </dx-data-grid>
 
             </widget>

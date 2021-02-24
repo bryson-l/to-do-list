@@ -4,11 +4,13 @@ import { UsersService } from 'src/app/services/users.service';
 import { UserModel } from 'src/app/models/user';
 import { TaskListModel } from 'src/app/models/taskList';
 import { TaskListsService } from 'src/app/services/taskList.service';
+import { TasksService } from 'src/app/services/task.service';
+import { TaskModel } from 'src/app/models/task';
 
 @Component({
   selector: 'to-do-list',
   templateUrl: './to-do-list.component.html',
-  providers: [ UsersService, TaskListsService ]
+  providers: [ UsersService, TaskListsService, TasksService ]
 })
 export class ToDoListComponent implements OnInit {
     screenHeight: number = 0;
@@ -17,10 +19,12 @@ export class ToDoListComponent implements OnInit {
     selectedUser: UserModel | null = null;
     taskLists: TaskListModel[] = [];
     selectedTaskList: TaskListModel | null = null;
+    tasks: TaskModel[] = [];
   
     constructor(
         private userService: UsersService,
-        private taskListService: TaskListsService
+        private taskListService: TaskListsService,
+        private taskService: TasksService
     ) {
         this.getScreenSize();
     }
@@ -38,6 +42,15 @@ export class ToDoListComponent implements OnInit {
                                 .subscribe((data: any) => {
                                     this.taskLists = data
                                 })
+        }
+    }
+
+    getSelectedListTasks(e: any) {
+        if (this.selectedTaskList) {
+            this.taskService.getListById(this.selectedTaskList.id)
+                            .subscribe(data => {
+                                this.tasks = data
+                            })
         }
     }
   

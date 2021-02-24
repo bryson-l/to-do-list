@@ -32,7 +32,7 @@ Route::put('task_lists/{id}', 'TaskListController@update');
 Route::delete('task_lists/{id}', 'TaskListController@delete');
 // TASKS
 Route::get('tasks', 'TaskController@index');
-Route::get('tasks/{id}', 'TaskController@show');
+Route::get('tasks/{taskListId}', 'TaskController@getTasksByTaskListId');
 Route::post('tasks', 'TaskController@store');
 Route::put('tasks/{id}', 'TaskController@update');
 Route::delete('tasks/{id}', 'TaskController@delete');
