@@ -1,10 +1,9 @@
 export class UserModel {
-    userId: number = 0;
-    firstName: string = '';
-    lastName: string = '';
+    id: number = 0;
+    first_name: string = '';
+    last_name: string = '';
     username: string = '';
-    password: string = '';
     admin: boolean = false;
-    createdDate: string = '';
-    updatedDate: string = '';
+    created_at: string = '';
+    updated_at: string = '';
 }

@@ -230,6 +230,7 @@ body .container.body .right_col {
   }
   .right_col {
     padding: 10px !important;
+    margin-left: 0;
   }
 }
 @media (max-width: 1200px) {
