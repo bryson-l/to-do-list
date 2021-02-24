@@ -25,6 +25,8 @@
                     [rowAlternationEnabled]="true"
                     [showBorders]="true"
                     [dataSource]= "tasks"
+                    (onRowRemoving)="onDeleteClick()"
+                    (onSaving)="onSaveClick()"
                     >
 
                     <dxo-editing mode="row" 

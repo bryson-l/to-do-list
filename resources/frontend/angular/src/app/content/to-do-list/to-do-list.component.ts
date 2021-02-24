@@ -53,6 +53,14 @@ export class ToDoListComponent implements OnInit {
                             })
         }
     }
+
+    onDeleteClick() {
+
+    }
+
+    onSaveClick() {
+        
+    }
   
     @HostListener('window:resize', ['$event'])
     getScreenSize(event?: any) {

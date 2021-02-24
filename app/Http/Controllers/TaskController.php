@@ -57,14 +57,25 @@ class TaskController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  array $tasks
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $tasks)
     {
-        $task = Tasks::findOrFail($id);
-        $task->update($request->all());
-        return response()->json($task);
+        foreach ($tasks as $task) {
+            if (Task::hydrate($task)->first()) {
+                $converted = Task::hydrate($task)->first();
+                $converted::save();
+            }
+            else {
+                $taskModel = new Task;
+                $taskModel->task_list_id = $task->task_list_id;
+                $taskModel->status_id = $task->status_id;
+                $taskModel->description = $task->description;
+                $taskModel::save();
+            };
+        }
+        return response()->json();
     }
 
     /**

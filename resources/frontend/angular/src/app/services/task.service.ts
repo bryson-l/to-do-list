@@ -13,4 +13,8 @@ export class TasksService {
     getListById(list_id: number): Observable<TaskModel[]> {
         return this.http.get<TaskModel[]>(this.apiUrl + '/tasks/' + list_id)
     }
+
+    saveTasks(tasks: TaskModel[]) {
+        return this.http.put(this.apiUrl + '/tasks', tasks)
+    }
 }
