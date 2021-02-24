@@ -24,6 +24,8 @@
     "@fortawesome/angular-fontawesome": "^0.8.2",
     "@types/jquery": "^3.5.5",
     "bootstrap": "^4.6.0",
+    "devextreme": "20.2.5",
+    "devextreme-angular": "20.2.5",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "jquery-flot": "^0.8.3",

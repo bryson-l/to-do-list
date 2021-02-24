@@ -14,6 +14,7 @@ import { LoginComponent } from './content/login/login.component';
 import { AuthGuard } from './auth/auth-guard.component'
 import { JwtInterceptor } from './auth/jwt.interceptor';
 import { ErrorInterceptor } from './auth/error.interceptor';
+import { DxDataGridModule, DxBulletModule, DxTemplateModule } from 'devextreme-angular';
 
 export const AppRoutes2: Routes = [
   { path: 'login', component: LoginComponent},
@@ -34,7 +35,10 @@ export const AppRoutes2: Routes = [
   imports: [BrowserModule, 
             RouterModule.forRoot(AppRoutes2, { useHash: true }), 
             HttpClientModule,
-            FormsModule 
+            FormsModule,
+            DxDataGridModule,
+            DxBulletModule,
+            DxTemplateModule
           ],
   providers: [ AuthGuard, 
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}, 
