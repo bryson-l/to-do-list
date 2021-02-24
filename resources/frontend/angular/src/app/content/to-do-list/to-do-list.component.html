@@ -2,9 +2,23 @@
     <div class="row">
         <div class="col-lg-4">
             <widget title="Choose User">
-                <select [(ngModel)]="selectedUser" class="form-control">
-                    <option *ngFor="let user of users">{{ user.first_name + " " + user.last_name }}</option>
+                <select [(ngModel)]="selectedUser" class="form-control" (change)="getSelectedUserLists($event)">
+                    <option *ngFor="let user of users" [ngValue]="user">{{ user.first_name + " " + user.last_name }}</option>
                 </select>
+            </widget>
+        </div>
+        <div class="col-lg-4">
+            <widget title="Choose List">
+                <select [(ngModel)]="selectedTaskList" class="form-control">
+                    <option *ngFor="let list of taskLists" [ngValue]="list">{{ list.id }}</option>
+                </select>
+            </widget>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <widget title="Edit/View List">
+
             </widget>
         </div>
     </div>

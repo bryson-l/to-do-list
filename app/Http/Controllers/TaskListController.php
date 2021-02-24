@@ -38,10 +38,10 @@ class TaskListController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($userId)
     {
-        $taskList = TaskLists::find($id);
-        return response()->json($taskList);
+        $taskLists = TaskLists::where('user_id', $userId)->get();
+        return response()->json($taskLists);
     }
 
 

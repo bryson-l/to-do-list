@@ -26,7 +26,7 @@ Route::delete('users/{id}', 'UserController@delete');
 Route::get('users/{token}', 'UserController@showByToken');
 // TASK LISTS
 Route::get('task_lists', 'TaskListController@index');
-Route::get('task_lists/{id}', 'TaskListController@show');
+Route::get('task_lists/{userId}', 'TaskListController@show');
 Route::post('task_lists', 'TaskListController@store');
 Route::put('task_lists/{id}', 'TaskListController@update');
 Route::delete('task_lists/{id}', 'TaskListController@delete');
